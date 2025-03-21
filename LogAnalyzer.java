@@ -10,15 +10,26 @@ public class LogAnalyzer
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
+    
 
     /**
      * Create an object to analyze hourly web accesses.
+     * Q2: Person[] people;
+     * Q3
      */
     public LogAnalyzer()
     { 
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
+        boolean[] vacant;
+        int[] counts;
+        boolean[] occupied = new boolean [5000];
+        double[] readings = new double[60];
+        String[] urls = new String[90];
+        int TicketMachine[]; TicketMachine = new int[5];
+        double[] prices = new double[50];
+        
         // Create the reader to obtain the data.
         reader = new LogfileReader();
     }
@@ -43,8 +54,10 @@ public class LogAnalyzer
     public void printHourlyCounts()
     {
         System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
+        int hour = 0;
+        while( hour < hourCounts.length) {
             System.out.println(hour + ": " + hourCounts[hour]);
+            hour++;
         }
     }
     
